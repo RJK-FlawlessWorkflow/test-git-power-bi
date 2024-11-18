@@ -1,5 +1,9 @@
 # TESTING
 
 ## blabla
-* This is bold * <br />
+* This is bold * 
+
+<br />
+
+
 __ This is italic __
