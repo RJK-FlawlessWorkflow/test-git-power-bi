@@ -1,0 +1,125 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "Calendar",
+          "nodeLineageTag": "cca966cd-7d77-4778-a9bd-eccb5b073874",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 244.51343475889416,
+            "y": 0
+          },
+          "nodeIndex": "Customer Lookup",
+          "nodeLineageTag": "0eb3ffe1-1144-4af1-b715-4d891c7d5d3a",
+          "size": {
+            "height": 225,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 492.84330022135725,
+            "y": 0
+          },
+          "nodeIndex": "Employee Lookup",
+          "nodeLineageTag": "e5606c62-f1c9-483d-a909-6fc2a2395184",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 639.60405052339081,
+            "y": 434.84322410118125
+          },
+          "nodeIndex": "Food Inventory",
+          "nodeLineageTag": "618d4259-7963-4998-90b4-00fd9880f381",
+          "size": {
+            "height": 362.93729884288962,
+            "width": 278.84677456562406
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 742.2498269954,
+            "y": 0
+          },
+          "nodeIndex": "Product Lookup",
+          "nodeLineageTag": "56d79f9e-15d2-4174-8d18-67763361863f",
+          "size": {
+            "height": 225,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 341.96066059878876,
+            "y": 442.58614520851768
+          },
+          "nodeIndex": "Sales by Store",
+          "nodeLineageTag": "ac0abd9a-d79d-44ef-9497-ad5febf87a89",
+          "size": {
+            "height": 360.54314566359255,
+            "width": 273.24092774492112
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 992.44103320462273,
+            "y": 0
+          },
+          "nodeIndex": "Store Lookup",
+          "nodeLineageTag": "3e44d32f-f335-494f-9a6a-53d0445b2fc4",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 1276.4410332046227,
+            "y": 301.56464543605512
+          },
+          "nodeIndex": "Measures Table",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Alle tabellen",
+      "zoomValue": 89.192590520569468,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Alle tabellen",
+  "defaultDiagram": "Alle tabellen"
+}

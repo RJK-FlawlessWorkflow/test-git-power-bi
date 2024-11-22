@@ -1,0 +1,27 @@
+model Model
+	culture: nl-NL
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-NL
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Calendar","Customer Lookup","Employee Lookup","Food Inventory","Product Lookup","Sales by Store","Store Lookup"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.137.1102.0 (24.10)
+
+annotation PBI_ProTooling = ["DevMode","TMDL-Extension"]
+
+ref table Calendar
+ref table 'Customer Lookup'
+ref table 'Employee Lookup'
+ref table 'Food Inventory'
+ref table 'Product Lookup'
+ref table 'Sales by Store'
+ref table 'Store Lookup'
+ref table 'Measures Table'
+
+ref cultureInfo nl-NL
+

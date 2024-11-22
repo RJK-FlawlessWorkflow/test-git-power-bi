@@ -1,0 +1,96 @@
+table Calendar
+	lineageTag: cca966cd-7d77-4778-a9bd-eccb5b073874
+
+	column Transaction_Date
+		dataType: string
+		lineageTag: a326a133-95a1-43d3-a140-71b25d345a58
+		summarizeBy: none
+		sourceColumn: Transaction_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date_ID
+		dataType: string
+		lineageTag: a337e8a2-e0d1-4602-846f-7d6cb7d0d97d
+		summarizeBy: none
+		sourceColumn: Date_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Week_ID
+		dataType: string
+		lineageTag: e248733e-8091-4aa6-905b-58f2d3477d48
+		summarizeBy: none
+		sourceColumn: Week_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Week_Desc
+		dataType: string
+		lineageTag: 4c0e6e87-880d-4359-a713-3e1da10d19a7
+		summarizeBy: none
+		sourceColumn: Week_Desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month_ID
+		dataType: string
+		lineageTag: 54eca6ba-476d-4cc4-8522-2ac8ee546e2c
+		summarizeBy: none
+		sourceColumn: Month_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month_Name
+		dataType: string
+		lineageTag: 78fd179c-898e-490b-a36c-7362f52c9fd5
+		summarizeBy: none
+		sourceColumn: Month_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter_ID
+		dataType: string
+		lineageTag: f35b6ce3-6b82-4e5a-91b9-2387a50400e5
+		summarizeBy: none
+		sourceColumn: Quarter_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter_Name
+		dataType: string
+		lineageTag: 0f7bea92-376e-44a8-8715-145e70438d14
+		summarizeBy: none
+		sourceColumn: Quarter_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year_ID
+		dataType: string
+		lineageTag: aac133df-3541-420f-8ec0-4f5a567c4888
+		summarizeBy: none
+		sourceColumn: Year_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Week_Year
+		dataType: string
+		lineageTag: be1680af-2713-42f9-a089-a4dc348509cb
+		summarizeBy: none
+		sourceColumn: Week_Year
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calendar = m
+		mode: import
+		source =
+				let
+				    Bron = Csv.Document(File.Contents("C:\Power BI\Advanced+DAX+Data+Files\Advanced DAX Data Files\Calendar.csv"),[Delimiter=",", Columns=10, QuoteStyle=QuoteStyle.None]),
+				    #"Headers met verhoogd niveau" = Table.PromoteHeaders(Bron, [PromoteAllScalars=true])
+				in
+				    #"Headers met verhoogd niveau"
+
+	annotation PBI_NavigationStepName = Navigatie
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,64 @@
+table 'Employee Lookup'
+	lineageTag: e5606c62-f1c9-483d-a909-6fc2a2395184
+
+	column staff_id
+		dataType: string
+		lineageTag: de055816-b29f-4994-89c0-747a1c46a555
+		summarizeBy: none
+		sourceColumn: staff_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_name
+		dataType: string
+		lineageTag: 9366ffd4-d32b-406f-b4a6-3da48d9b30c2
+		summarizeBy: none
+		sourceColumn: first_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_name
+		dataType: string
+		lineageTag: de7c5106-641b-4837-848f-5aa61654a646
+		summarizeBy: none
+		sourceColumn: last_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column position
+		dataType: string
+		lineageTag: 7a79abc1-97ed-4a9c-a9c2-24788b218055
+		summarizeBy: none
+		sourceColumn: position
+
+		annotation SummarizationSetBy = Automatic
+
+	column start_date
+		dataType: string
+		lineageTag: 2ec624ab-b3b9-4893-974f-d7cbaa16922d
+		summarizeBy: none
+		sourceColumn: start_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column location
+		dataType: string
+		lineageTag: e0aa9c37-226e-48a4-a057-eb294bc07712
+		summarizeBy: none
+		sourceColumn: location
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Employee Lookup' = m
+		mode: import
+		source =
+				let
+				    Bron = Csv.Document(File.Contents("C:\Power BI\Advanced+DAX+Data+Files\Advanced DAX Data Files\Employee Lookup.csv"),[Delimiter=",", Columns=6, QuoteStyle=QuoteStyle.None]),
+				    #"Headers met verhoogd niveau" = Table.PromoteHeaders(Bron, [PromoteAllScalars=true])
+				in
+				    #"Headers met verhoogd niveau"
+
+	annotation PBI_NavigationStepName = Navigatie
+
+	annotation PBI_ResultType = Table
+

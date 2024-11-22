@@ -1,0 +1,104 @@
+table 'Store Lookup'
+	lineageTag: 3e44d32f-f335-494f-9a6a-53d0445b2fc4
+
+	column store_id
+		dataType: string
+		lineageTag: 61368c6b-788e-47f2-a1a2-472f2322a8a1
+		summarizeBy: none
+		sourceColumn: store_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column store_type
+		dataType: string
+		lineageTag: e1a0505e-a159-47aa-911f-91c63ffae953
+		summarizeBy: none
+		sourceColumn: store_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column store_square_feet
+		dataType: string
+		lineageTag: df37201a-3ac3-4353-a6a8-a908860c7226
+		summarizeBy: none
+		sourceColumn: store_square_feet
+
+		annotation SummarizationSetBy = Automatic
+
+	column store_address
+		dataType: string
+		lineageTag: b7fb1d68-567a-4927-91c3-23e89df2c5cf
+		summarizeBy: none
+		sourceColumn: store_address
+
+		annotation SummarizationSetBy = Automatic
+
+	column store_city
+		dataType: string
+		lineageTag: 58cbaf93-0963-40b1-9713-25cbcc579c5f
+		summarizeBy: none
+		sourceColumn: store_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column store_state_province
+		dataType: string
+		lineageTag: d4e2b967-228d-40c4-8d1a-7564362e346c
+		summarizeBy: none
+		sourceColumn: store_state_province
+
+		annotation SummarizationSetBy = Automatic
+
+	column store_postal_code
+		dataType: string
+		lineageTag: 2dd9399d-329f-407b-a565-de8a2d6a3e9f
+		summarizeBy: none
+		sourceColumn: store_postal_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column store_longitude
+		dataType: string
+		lineageTag: 75b6eca7-d0f2-45c2-b221-7cdbd454a1c2
+		summarizeBy: none
+		sourceColumn: store_longitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column store_latitude
+		dataType: string
+		lineageTag: b21faad9-b5ab-4f5e-a519-739ea32cf689
+		summarizeBy: none
+		sourceColumn: store_latitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column manager
+		dataType: string
+		lineageTag: 2ad4e3e2-6db7-4dbe-b605-6ae7a8e07d62
+		summarizeBy: none
+		sourceColumn: manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column Neighorhood
+		dataType: string
+		lineageTag: 59eac49d-5fc8-492a-9ea7-7b8623f906cc
+		summarizeBy: none
+		sourceColumn: Neighorhood
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Store Lookup' = m
+		mode: import
+		source =
+				let
+				    Bron = Csv.Document(File.Contents("C:\Power BI\Advanced+DAX+Data+Files\Advanced DAX Data Files\Store Lookup.csv"),[Delimiter=",", Columns=11, QuoteStyle=QuoteStyle.None]),
+				    #"Headers met verhoogd niveau" = Table.PromoteHeaders(Bron, [PromoteAllScalars=true])
+				in
+				    #"Headers met verhoogd niveau"
+
+	annotation PBI_NavigationStepName = Navigatie
+
+	annotation PBI_ResultType = Table
+
