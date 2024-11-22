@@ -117,7 +117,7 @@ table 'Product Lookup'
 		mode: import
 		source =
 				let
-				    Bron = Csv.Document(File.Contents("C:\Power BI\Advanced+DAX+Data+Files\Advanced DAX Data Files\Product Lookup.csv"),[Delimiter=",", Columns=14, QuoteStyle=QuoteStyle.None]),
+				    Bron = Csv.Document(File.Contents("C:\Users\flawl\Documents\Udemy\Power BI\Course\Advanced+DAX+Data+Files\Advanced DAX Data Files\Product Lookup.csv"),[Delimiter=",", Columns=14, QuoteStyle=QuoteStyle.None]),
 				    #"Headers met verhoogd niveau" = Table.PromoteHeaders(Bron, [PromoteAllScalars=true])
 				in
 				    #"Headers met verhoogd niveau"

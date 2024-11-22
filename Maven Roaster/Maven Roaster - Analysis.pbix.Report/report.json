@@ -27,31 +27,31 @@
       "name": "23b604f8bd3bd0ab5ccd",
       "visualContainers": [
         {
-          "config": "{\"name\":\"412be5690a4f71208904\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":220,\"width\":435,\"height\":160,\"z\":1,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Measures Table.Count Unit Price\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Measures Table\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Count Unit Price\"},\"Name\":\"Measures Table.Count Unit Price\",\"NativeReferenceName\":\"Count Unit Price\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Count Unit Price\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
-          "filters": "[]",
-          "height": 160.00,
-          "width": 435.00,
-          "x": 10.00,
-          "y": 220.00,
-          "z": 1.00
-        },
-        {
-          "config": "{\"name\":\"4a37b6eea18af8d46e7b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":46.68693009118541,\"z\":3,\"width\":434.77203647416417,\"height\":160.48632218844986,\"tabOrder\":3}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Store Lookup.store_city\"},{\"queryRef\":\"Store Lookup.Neighorhood\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Store Lookup\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"store_city\"},\"Name\":\"Store Lookup.store_city\",\"NativeReferenceName\":\"store_city\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Neighorhood\"},\"Name\":\"Store Lookup.Neighorhood\",\"NativeReferenceName\":\"Neighorhood\"}]},\"drillFilterOtherVisuals\":true}}",
+          "config": "{\"name\":\"4a37b6eea18af8d46e7b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":39.87841945288754,\"z\":1000,\"width\":246.0790273556231,\"height\":160.48632218844986,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Store Lookup.store_city\"},{\"queryRef\":\"Store Lookup.Neighorhood\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Store Lookup\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"store_city\"},\"Name\":\"Store Lookup.store_city\",\"NativeReferenceName\":\"store_city\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Neighorhood\"},\"Name\":\"Store Lookup.Neighorhood\",\"NativeReferenceName\":\"Neighorhood\"}]},\"drillFilterOtherVisuals\":true}}",
           "filters": "[]",
           "height": 160.49,
-          "width": 434.77,
+          "width": 246.08,
           "x": 0.00,
-          "y": 46.69,
-          "z": 3.00
+          "y": 39.88,
+          "z": 1000.00
         },
         {
-          "config": "{\"name\":\"e928f8e4037cbfd2f14a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":440,\"width\":435,\"height\":160,\"z\":2,\"tabOrder\":2}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Measures Table.Total Quantity\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Measures Table\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Quantity\"},\"Name\":\"Measures Table.Total Quantity\",\"NativeReferenceName\":\"Total Quantity\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Quantity\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "config": "{\"name\":\"cf4244f50306939199c1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":784.9240121580548,\"y\":39.87841945288754,\"z\":2000,\"width\":300.5471124620061,\"height\":160.48632218844986,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Measures Table.Total Sales\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Measures Table\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Sales\"},\"Name\":\"Measures Table.Total Sales\",\"NativeReferenceName\":\"Total Sales\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Sales\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
           "filters": "[]",
-          "height": 160.00,
-          "width": 435.00,
-          "x": 10.00,
-          "y": 440.00,
-          "z": 2.00
+          "height": 160.49,
+          "width": 300.55,
+          "x": 784.92,
+          "y": 39.88,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"e928f8e4037cbfd2f14a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":481.45896656534956,\"y\":39.87841945288754,\"z\":0,\"width\":303.46504559270517,\"height\":160.48632218844986,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Measures Table.Total Quantity\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Measures Table\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Quantity\"},\"Name\":\"Measures Table.Total Quantity\",\"NativeReferenceName\":\"Total Quantity\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Quantity\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 160.49,
+          "width": 303.47,
+          "x": 481.46,
+          "y": 39.88,
+          "z": 0.00
         }
       ],
       "width": 1280.00
