@@ -1,7 +1,7 @@
 table 'Measures Table'
 	lineageTag: 6dfe0fd8-95c3-4411-98ce-5e197ef1e9f9
 
-	measure 'Total Quantity' =
+	measure 'Total Quantity Sold' =
 			
 			SUM('Sales by Store'[quantity_sold])
 		formatString: #,0
