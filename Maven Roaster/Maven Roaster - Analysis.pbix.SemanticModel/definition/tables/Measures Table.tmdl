@@ -1,34 +1,30 @@
 table 'Measures Table'
-	lineageTag: dec5256d-3009-4f3b-ba26-4faac74e025d
+	lineageTag: 6dfe0fd8-95c3-4411-98ce-5e197ef1e9f9
 
 	measure 'Total Quantity' =
 			
 			SUM('Sales by Store'[quantity_sold])
-		formatString: 0
-		lineageTag: d54b9b95-a0c2-47ad-a925-8729cc36fb7f
+		formatString: #,0
+		displayFolder: Sales
+		lineageTag: d65f2167-a9b4-474a-8bb6-2df37099c851
 
-	measure 'Count Unit Price' =
+	measure 'Total Sales' =
 			
-			COUNT('Sales by Store'[unit_price])
-		formatString: 0
-		lineageTag: s34g6k33-a0c2-47ad-a925-8729cc36fb7f
+			SUMX('Sales by Store', 'Sales by Store'[quantity_sold]*'Sales by Store'[unit_price])
+		formatString: #,0
+		displayFolder: Sales
+		lineageTag: 72cb63ad-c0e6-41e4-a68f-e20a60d7d497
 
-	column Column
-		dataType: int64
-		formatString: 0
-		lineageTag: 8023bed6-94cb-46fa-a736-c892ba674f55
-		summarizeBy: sum
-		isNameInferred
-		isDataTypeInferred
-		sourceColumn: [Column]
-
-		annotation SummarizationSetBy = Automatic
-
-	partition 'Measures Table' = calculated
+	partition 'Measures Table' = m
 		mode: import
-		source = Row("Column", BLANK())
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WKk7MLchJVYqNBQA=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Removed Columns" = Table.RemoveColumns(Source,{"Column1"})
+				in
+				    #"Removed Columns"
 
-	annotation PBI_Id = f47e42d445dd4d4f94f9cb358c79f586
+	changedProperty = Name
 
-	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+	annotation PBI_ResultType = Table
 

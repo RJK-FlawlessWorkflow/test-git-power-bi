@@ -101,15 +101,16 @@
         },
         {
           "location": {
-            "x": 1276.4410332046227,
-            "y": 301.56464543605512
+            "x": 1155.6988841960215,
+            "y": 479.62029167636507
           },
           "nodeIndex": "Measures Table",
+          "nodeLineageTag": "6dfe0fd8-95c3-4411-98ce-5e197ef1e9f9",
           "size": {
-            "height": 200,
+            "height": 174.63366994085789,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 8
         }
       ],
       "name": "Alle tabellen",

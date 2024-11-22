@@ -53,12 +53,12 @@ table 'Employee Lookup'
 		mode: import
 		source =
 				let
-				    Bron = Csv.Document(File.Contents("C:\Power BI\Advanced+DAX+Data+Files\Advanced DAX Data Files\Employee Lookup.csv"),[Delimiter=",", Columns=6, QuoteStyle=QuoteStyle.None]),
+				    Bron = Csv.Document(File.Contents("C:\Users\flawl\Documents\Udemy\Power BI\Course\Advanced+DAX+Data+Files\Advanced DAX Data Files\Employee Lookup.csv"),[Delimiter=",", Columns=6, QuoteStyle=QuoteStyle.None]),
 				    #"Headers met verhoogd niveau" = Table.PromoteHeaders(Bron, [PromoteAllScalars=true])
 				in
 				    #"Headers met verhoogd niveau"
 
 	annotation PBI_NavigationStepName = Navigatie
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 
