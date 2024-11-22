@@ -1,0 +1,34 @@
+table 'Measures Table'
+	lineageTag: dec5256d-3009-4f3b-ba26-4faac74e025d
+
+	measure 'Total Quantity' =
+			
+			SUM('Sales by Store'[quantity_sold])
+		formatString: 0
+		lineageTag: d54b9b95-a0c2-47ad-a925-8729cc36fb7f
+
+	measure 'Count Unit Price' =
+			
+			COUNT('Sales by Store'[unit_price])
+		formatString: 0
+		lineageTag: s34g6k33-a0c2-47ad-a925-8729cc36fb7f
+
+	column Column
+		dataType: int64
+		formatString: 0
+		lineageTag: 8023bed6-94cb-46fa-a736-c892ba674f55
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Measures Table' = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = f47e42d445dd4d4f94f9cb358c79f586
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

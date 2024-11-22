@@ -1,0 +1,88 @@
+table 'Customer Lookup'
+	lineageTag: 0eb3ffe1-1144-4af1-b715-4d891c7d5d3a
+
+	column customer_id
+		dataType: string
+		lineageTag: 8fcfd1d1-a713-4fda-98fb-f9e4529400ee
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column home_store
+		dataType: string
+		lineageTag: 7902cd2f-c507-4d46-bd10-b9b52f11f00a
+		summarizeBy: none
+		sourceColumn: home_store
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_first-name
+		dataType: string
+		lineageTag: 2e2d4f44-cf26-4f49-813e-13309fc1ee2d
+		summarizeBy: none
+		sourceColumn: customer_first-name
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_email
+		dataType: string
+		lineageTag: 7360d198-db05-4fda-8ec3-7d0308c1f25b
+		summarizeBy: none
+		sourceColumn: customer_email
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_since
+		dataType: string
+		lineageTag: 6621cf2f-4718-4a3b-85c3-4134041f18b7
+		summarizeBy: none
+		sourceColumn: customer_since
+
+		annotation SummarizationSetBy = Automatic
+
+	column loyalty_card_number
+		dataType: string
+		lineageTag: f88d0d98-9ea6-4f07-9a82-ccc808b60df8
+		summarizeBy: none
+		sourceColumn: loyalty_card_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column birthdate
+		dataType: string
+		lineageTag: d9213e9f-b5d9-4b11-ab70-01f9521feefc
+		summarizeBy: none
+		sourceColumn: birthdate
+
+		annotation SummarizationSetBy = Automatic
+
+	column gender
+		dataType: string
+		lineageTag: 20594faf-0367-48b8-ace7-ae9453e01300
+		summarizeBy: none
+		sourceColumn: gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column birth_year
+		dataType: string
+		lineageTag: 44752085-d3f7-440e-b2fb-20e947e3d7ce
+		summarizeBy: none
+		sourceColumn: birth_year
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Customer Lookup' = m
+		mode: import
+		source =
+				let
+				    Bron = Csv.Document(File.Contents("C:\Power BI\Advanced+DAX+Data+Files\Advanced DAX Data Files\Customer Lookup.csv"),[Delimiter=",", Columns=9, QuoteStyle=QuoteStyle.None]),
+				    #"Headers met verhoogd niveau" = Table.PromoteHeaders(Bron, [PromoteAllScalars=true])
+				in
+				    #"Headers met verhoogd niveau"
+
+	annotation PBI_NavigationStepName = Navigatie
+
+	annotation PBI_ResultType = Table
+

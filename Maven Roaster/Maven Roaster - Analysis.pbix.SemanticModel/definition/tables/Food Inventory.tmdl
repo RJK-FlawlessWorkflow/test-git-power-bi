@@ -1,0 +1,64 @@
+table 'Food Inventory'
+	lineageTag: 618d4259-7963-4998-90b4-00fd9880f381
+
+	column store_id
+		dataType: string
+		lineageTag: 08a3f5a7-2856-4354-9697-5635e307271e
+		summarizeBy: none
+		sourceColumn: store_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column baked_date
+		dataType: string
+		lineageTag: 96e3e245-c615-44ab-a691-a601606be8b1
+		summarizeBy: none
+		sourceColumn: baked_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column transaction_date
+		dataType: string
+		lineageTag: 6d260346-8221-4f9b-8473-52c1f04da65f
+		summarizeBy: none
+		sourceColumn: transaction_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: string
+		lineageTag: b30236fd-ad86-4f2f-bda0-1a3a283a76a9
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity_start_of_day
+		dataType: string
+		lineageTag: a7d6221e-2f55-42eb-b28f-d5f930dd3952
+		summarizeBy: none
+		sourceColumn: quantity_start_of_day
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity_sold
+		dataType: string
+		lineageTag: 10785ecb-1a8d-4339-9180-bf23f77df476
+		summarizeBy: none
+		sourceColumn: quantity_sold
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Food Inventory' = m
+		mode: import
+		source =
+				let
+				    Bron = Csv.Document(File.Contents("C:\Power BI\Advanced+DAX+Data+Files\Advanced DAX Data Files\Food Inventory.csv"),[Delimiter=",", Columns=6, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Headers met verhoogd niveau" = Table.PromoteHeaders(Bron, [PromoteAllScalars=true])
+				in
+				    #"Headers met verhoogd niveau"
+
+	annotation PBI_NavigationStepName = Navigatie
+
+	annotation PBI_ResultType = Table
+

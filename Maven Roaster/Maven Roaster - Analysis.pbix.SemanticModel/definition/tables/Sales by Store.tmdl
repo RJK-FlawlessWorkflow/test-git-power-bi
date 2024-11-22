@@ -1,0 +1,126 @@
+table 'Sales by Store'
+	lineageTag: ac0abd9a-d79d-44ef-9497-ad5febf87a89
+
+	column transaction_id
+		dataType: string
+		lineageTag: 5a7120dd-4cc4-40c8-818b-1082f3d8f3e0
+		summarizeBy: none
+		sourceColumn: transaction_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column transaction_date
+		dataType: string
+		lineageTag: e28bbef3-0d30-4407-8e50-e874bc03307a
+		summarizeBy: none
+		sourceColumn: transaction_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column transaction_time
+		dataType: string
+		lineageTag: 29981c75-0270-4258-b454-082d7ba0baa5
+		summarizeBy: none
+		sourceColumn: transaction_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column store_id
+		dataType: string
+		lineageTag: 29e00467-91c7-49dc-9e4a-ad05b4a1603c
+		summarizeBy: none
+		sourceColumn: store_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column staff_id
+		dataType: string
+		lineageTag: 759097de-9931-4052-a010-162b4459dc02
+		summarizeBy: none
+		sourceColumn: staff_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		lineageTag: cf1202aa-86bc-4d71-8206-5da75145aeef
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column instore_yn
+		dataType: string
+		lineageTag: 15455e56-d2bf-4b4c-946b-18becbb30157
+		summarizeBy: none
+		sourceColumn: instore_yn
+
+		annotation SummarizationSetBy = Automatic
+
+	column order
+		dataType: string
+		lineageTag: 4f8ea215-642a-418e-820d-0efa93e6a62e
+		summarizeBy: none
+		sourceColumn: order
+
+		annotation SummarizationSetBy = Automatic
+
+	column line_item_id
+		dataType: string
+		lineageTag: 84102845-6d50-4ece-89a1-9381cca22c81
+		summarizeBy: none
+		sourceColumn: line_item_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: string
+		lineageTag: 5347a778-760b-4145-a550-992ef24b9523
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity_sold
+		dataType: int64
+		formatString: 0
+		lineageTag: f703f22c-6991-42e7-92fe-c79ac92ba1c9
+		summarizeBy: sum
+		sourceColumn: quantity_sold
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_price
+		dataType: double
+		formatString: 0.00
+		lineageTag: 2a5a32ff-6053-472d-8465-21e304bc4eca
+		summarizeBy: sum
+		sourceColumn: unit_price
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column promo_item_yn
+		dataType: string
+		lineageTag: 7d3fcb35-13de-4933-b167-4c5a2a60a323
+		summarizeBy: none
+		sourceColumn: promo_item_yn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sales by Store' = m
+		mode: import
+		source =
+				let
+				    Bron = Csv.Document(File.Contents("C:\Power BI\Advanced+DAX+Data+Files\Advanced DAX Data Files\Sales by Store.csv"),[Delimiter=",", Columns=13, QuoteStyle=QuoteStyle.None]),
+				    #"Headers met verhoogd niveau" = Table.PromoteHeaders(Bron, [PromoteAllScalars=true])
+				in
+				    #"Headers met verhoogd niveau"
+
+	annotation PBI_NavigationStepName = Navigatie
+
+	annotation PBI_ResultType = Table
+
